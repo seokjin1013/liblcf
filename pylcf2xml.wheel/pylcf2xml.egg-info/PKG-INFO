@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: pylcf2xml
+Version: 0.0.1
+Summary: lcf2xml python build.
+Home-page: https://github.com/EasyRPG/liblcf
+Author: seokjin1013
+Keywords: pylcf2xml
+Requires-Python: >=3.8
+License-File: LICENSE
+License-File: COPYING
+License-File: AUTHORS.md

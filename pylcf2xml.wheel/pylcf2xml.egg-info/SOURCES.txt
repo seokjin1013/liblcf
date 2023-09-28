@@ -1,0 +1,13 @@
+AUTHORS.md
+COPYING
+LICENSE
+README.md
+setup.py
+pylcf2xml.wheel/pylcf2xml/LICENSE.txt
+pylcf2xml.wheel/pylcf2xml/__init__.py
+pylcf2xml.wheel/pylcf2xml/liblcf.so.0
+pylcf2xml.wheel/pylcf2xml/pylcf2xml.cpython-311-x86_64-linux-gnu.so
+pylcf2xml.wheel/pylcf2xml.egg-info/PKG-INFO
+pylcf2xml.wheel/pylcf2xml.egg-info/SOURCES.txt
+pylcf2xml.wheel/pylcf2xml.egg-info/dependency_links.txt
+pylcf2xml.wheel/pylcf2xml.egg-info/top_level.txt

@@ -501,6 +501,10 @@ endif()
 
 # python
 if (LIBLCF_ENABLE_PYTHON)
+	set(CMAKE_MODULE_PATH "./")
+	set(WHEEL_DEPLOY_DIRECTORY "${CMAKE_BINARY_DIR}")
+	include(python-wheel)
+
 	# set(PYBIND11_FINDPYTHON ON)
 	find_package(Python 3.11 COMPONENTS Interpreter Development REQUIRED)
 	execute_process(COMMAND python -m venv ${CMAKE_CURRENT_BINARY_DIR}/python/venv)
@@ -510,6 +514,20 @@ if (LIBLCF_ENABLE_PYTHON)
 	find_package(pybind11 REQUIRED)
 	pybind11_add_module(pylcf2xml python/pylcf2xml.cpp)
 	target_link_libraries(pylcf2xml PUBLIC lcf)
+
+	add_wheel(pylcf2xml
+		NAME pylcf2xml
+		VERSION "0.0.1"
+		AUTHOR "seokjin1013"
+		URL "https://github.com/EasyRPG/liblcf"
+		PYTHON_REQUIRES ">=3.8"
+		DESCRIPTION "lcf2xml python build."
+		# DEPLOY_FILES "MY_LICENSE.txt"
+		TARGET_DEPENDENCIES
+			lcf
+		# MODULE_DEPENDENCIES
+		# 	pypi-dependency1 pypi-dependency2
+	)
 endif()
 
 # Doxygen documentation
