@@ -1,3 +1,5 @@
+#pragma once
+
 #include <lcf/ldb/reader.h>
 #include <lcf/lmt/reader.h>
 #include <lcf/lmu/reader.h>
@@ -5,19 +7,20 @@
 #include <lcf/reader_lcf.h>
 #include <lcf/reader_util.h>
 #include <sstream>
+#include <pybind11/pybind11.h>
 
-std::string lmu2xml(const std::string& in, std::string engine, std::string encoding);
+pybind11::bytes lmu2xml(const pybind11::bytes& in, std::string engine, std::string encoding);
 
-std::string lsd2xml(const std::string& in, std::string engine, std::string encoding);
+pybind11::bytes lsd2xml(const pybind11::bytes& in, std::string engine, std::string encoding);
 
-std::string ldb2xml(const std::string& in, std::string encoding);
+pybind11::bytes ldb2xml(const pybind11::bytes& in, std::string encoding);
 
-std::string lmt2xml(const std::string& in, std::string engine, std::string encoding);
+pybind11::bytes lmt2xml(const pybind11::bytes& in, std::string engine, std::string encoding);
 
-std::string xml2lmu(const std::string& in, std::string engine, std::string encoding);
+pybind11::bytes xml2lmu(const pybind11::bytes& in, std::string engine, std::string encoding);
 
-std::string xml2lsd(const std::string& in, std::string engine, std::string encoding);
+pybind11::bytes xml2lsd(const pybind11::bytes& in, std::string engine, std::string encoding);
 
-std::string xml2ldb(const std::string& in, std::string encoding);
+pybind11::bytes xml2ldb(const pybind11::bytes& in, std::string encoding);
 
-std::string xml2lmt(const std::string& in, std::string engine, std::string encoding);
+pybind11::bytes xml2lmt(const pybind11::bytes& in, std::string engine, std::string encoding);

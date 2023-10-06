@@ -8,7 +8,7 @@ lcf::EngineVersion GetEngineVersion(std::string engine) {
     return lcf::EngineVersion::e2k;
 }
 
-std::string lmu2xml(const std::string& in, std::string engine, std::string encoding) {
+pybind11::bytes lmu2xml(const pybind11::bytes& in, std::string engine, std::string encoding) {
     std::istringstream istream(in, std::ios::binary);
     auto file = lcf::LMU_Reader::Load(istream, encoding);
     std::ostringstream ostream(std::ios::binary);
@@ -16,7 +16,7 @@ std::string lmu2xml(const std::string& in, std::string engine, std::string encod
     return ostream.str();
 }
 
-std::string lsd2xml(const std::string& in, std::string engine, std::string encoding) {
+pybind11::bytes lsd2xml(const pybind11::bytes& in, std::string engine, std::string encoding) {
     std::istringstream istream(in, std::ios::binary);
     auto file = lcf::LSD_Reader::Load(istream, encoding);
     std::ostringstream ostream(std::ios::binary);
@@ -24,7 +24,7 @@ std::string lsd2xml(const std::string& in, std::string engine, std::string encod
     return ostream.str();
 }
 
-std::string ldb2xml(const std::string& in, std::string encoding) {
+pybind11::bytes ldb2xml(const pybind11::bytes& in, std::string encoding) {
     std::istringstream istream(in, std::ios::binary);
     auto file = lcf::LDB_Reader::Load(istream, encoding);
     std::ostringstream ostream(std::ios::binary);
@@ -32,7 +32,7 @@ std::string ldb2xml(const std::string& in, std::string encoding) {
     return ostream.str();
 }
 
-std::string lmt2xml(const std::string& in, std::string engine, std::string encoding) {
+pybind11::bytes lmt2xml(const pybind11::bytes& in, std::string engine, std::string encoding) {
     std::istringstream istream(in, std::ios::binary);
     auto file = lcf::LMT_Reader::Load(istream, encoding);
     std::ostringstream ostream(std::ios::binary);
@@ -40,7 +40,7 @@ std::string lmt2xml(const std::string& in, std::string engine, std::string encod
     return ostream.str();
 }
 
-std::string xml2lmu(const std::string& in, std::string engine, std::string encoding) {
+pybind11::bytes xml2lmu(const pybind11::bytes& in, std::string engine, std::string encoding) {
     std::istringstream istream(in, std::ios::binary);
     auto file = lcf::LMU_Reader::LoadXml(istream);
     std::ostringstream ostream(std::ios::binary);
@@ -48,7 +48,7 @@ std::string xml2lmu(const std::string& in, std::string engine, std::string encod
     return ostream.str();
 }
 
-std::string xml2lsd(const std::string& in, std::string engine, std::string encoding) {
+pybind11::bytes xml2lsd(const pybind11::bytes& in, std::string engine, std::string encoding) {
     std::istringstream istream(in, std::ios::binary);
     auto file = lcf::LSD_Reader::LoadXml(istream);
     std::ostringstream ostream(std::ios::binary);
@@ -56,7 +56,7 @@ std::string xml2lsd(const std::string& in, std::string engine, std::string encod
     return ostream.str();
 }
 
-std::string xml2ldb(const std::string& in, std::string encoding) {
+pybind11::bytes xml2ldb(const pybind11::bytes& in, std::string encoding) {
     std::istringstream istream(in, std::ios::binary);
     auto file = lcf::LDB_Reader::LoadXml(istream);
     std::ostringstream ostream(std::ios::binary);
@@ -64,7 +64,7 @@ std::string xml2ldb(const std::string& in, std::string encoding) {
     return ostream.str();
 }
 
-std::string xml2lmt(const std::string& in, std::string engine, std::string encoding) {
+pybind11::bytes xml2lmt(const pybind11::bytes& in, std::string engine, std::string encoding) {
     std::istringstream istream(in, std::ios::binary);
     auto file = lcf::LMT_Reader::LoadXml(istream);
     std::ostringstream ostream(std::ios::binary);
